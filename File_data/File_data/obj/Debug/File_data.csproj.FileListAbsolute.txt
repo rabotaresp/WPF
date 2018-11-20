@@ -1,0 +1,4 @@
+D:\P41017\WindowsForms\2018-11-20_C_W\File_data\File_data\bin\Debug\File_data.dll
+D:\P41017\WindowsForms\2018-11-20_C_W\File_data\File_data\bin\Debug\File_data.pdb
+D:\P41017\WindowsForms\2018-11-20_C_W\File_data\File_data\obj\Debug\File_data.dll
+D:\P41017\WindowsForms\2018-11-20_C_W\File_data\File_data\obj\Debug\File_data.pdb
