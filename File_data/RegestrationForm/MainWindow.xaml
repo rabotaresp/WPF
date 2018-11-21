@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RegestrationForm"
         mc:Ignorable="d"
-        Title="Regestration Form" Height="444.792" Width="715.624">
+        Title="Regestration Form" Height="579.818" Width="715.624">
     <Grid>
         <ScrollViewer>
             <StackPanel>
@@ -18,15 +18,44 @@
                     <LineBreak/>
                 </TextBlock>
                 <TextBlock FontSize="14" Foreground="Red" Margin="10,0,0,0"> Обязательно*<LineBreak/></TextBlock>
-                <TextBlock FontSize="14" Margin="10,0,0,0">Фамилия и имя <Run Foreground="Red">*</Run><LineBreak/></TextBlock>
+                <TextBlock FontSize="14" Margin="10,0,0,0">Фамилия и имя <Run Foreground="Red">*</Run></TextBlock>
                 <TextBox Margin="10,0,0,0" Width="450"  HorizontalAlignment="Left" FontSize="14"/>
-                <TextBlock FontSize="14" Margin="10,0,0,0"><LineBreak/>E-Mail <Run Foreground="Red">*</Run><LineBreak/></TextBlock>
+                <TextBlock FontSize="14" Margin="10,0,0,0"><LineBreak/>E-Mail <Run Foreground="Red">*</Run></TextBlock>
                 <TextBox Margin="10,0,0,0" Width="450"  HorizontalAlignment="Left" FontSize="14"/>
-                <TextBlock FontSize="14" Margin="10,0,0,0"><LineBreak/>Телефон <Run Foreground="Red">*</Run><LineBreak/></TextBlock>
+                <TextBlock FontSize="14" Margin="10,0,0,0"><LineBreak/>Телефон <Run Foreground="Red">*</Run></TextBlock>
                 <TextBox Margin="10,0,0,0" Width="450"  HorizontalAlignment="Left" FontSize="14"/>
+                <TextBlock FontSize="14" Margin="10,0,0,0"><LineBreak/> У вас уже есть опыт продаж?<Run Foreground="Red">*</Run> <LineBreak/></TextBlock>
+                <StackPanel x:Name="Experience">
+                    <RadioButton Content="Нет, совсем нет в этом опыта" FontSize="14" GroupName="experience"/>
+                    <RadioButton Content="Есть опыт продаж, но не в ИТ" FontSize="14" GroupName="experience"/>
+                    <RadioButton Content="Есть опыт продаж в ИТ" FontSize="14" GroupName="experience"/>
+                    <RadioButton Content="Другое:" FontSize="14" GroupName="experience"/>
+                    <TextBox Margin="10,0,0,0" Width="450"  HorizontalAlignment="Left" FontSize="14"/>
+                </StackPanel>
+                <TextBlock FontSize="14" Margin="10,0,0,0"><LineBreak/> Откуда вы узнали о SaleSolution? <LineBreak/></TextBlock>
+                <StackPanel x:Name="source">
+                    <CheckBox Content="Рассказали знакомые" FontSize="14" />
+                    <CheckBox Content="Рассказали коллеги" FontSize="14" />
+                    <CheckBox Content="Из рекламы в Facebook" FontSize="14" />
+                    <CheckBox Content="Из статей, других публикаций" FontSize="14" />
+                    <CheckBox Content="Давно знаю о школе, уже не помню, откуда" FontSize="14" />
+                    <CheckBox Content="Поиском в Интернете" FontSize="14" />
+                    <CheckBox Content="Из отзывов на форумах/ в группах в Интернете" FontSize="14" />
+                    <CheckBox Content="Из информации на IT Sales Marketing Meetup" FontSize="14" />
+                    <CheckBox Content="Другое:" FontSize="14" />
+                    <TextBox Margin="10,0,0,0" Width="450"  HorizontalAlignment="Left" FontSize="14"/>
+                </StackPanel>
+                <TextBlock FontSize="14" Margin="10,0,0,0"></TextBlock>
+                <Button x:Name="Foto" Content="Добавить фото" HorizontalAlignment="Left" Margin="10,0,0,0" Width="120" Height="35" Click="Button_Click"/>
+                <Button x:Name="Change_Foto" Content="Заменить фото" HorizontalAlignment="Left" Margin="10,0,0,0" Width="120" Height="35" Click="Button_Click_Change_Foto"/>
+                <Image x:Name="My_foto"  Width="200" Height="200" Margin="10,0,0,0" HorizontalAlignment="Left"/>
+                <TextBlock FontSize="14" Margin="10,0,0,0"><LineBreak/> Это место для ваших вопросов и пожеланий:</TextBlock>
+                <TextBox Margin="10,0,0,0" Width="450"  HorizontalAlignment="Left" FontSize="14"/>
+                <TextBlock FontSize="14" Margin="10,0,0,0"></TextBlock>
+                <Button x:Name="Submit" Content="Submit" Height="35" Width="120" Margin="10,0,0,0" HorizontalAlignment="Left" Background="Aqua" Click="Submit_Click"/>
+                <TextBlock FontSize="14" Margin="10,0,0,0"><LineBreak/></TextBlock>
+                <TextBlock FontSize="14" Margin="0,0,0,0" Background="OrangeRed"><LineBreak/> Спасибо за ваши ответы! Мы уже готовимся к встрече с вами.<LineBreak/></TextBlock>
             </StackPanel>
         </ScrollViewer>
-
-
     </Grid>
 </Window>

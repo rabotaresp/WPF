@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
+using System.Windows.Media.Imaging;
 
 namespace File_Data
 {
+    [Serializable]
     public class UserR
     {
         string fio;
@@ -21,6 +24,7 @@ namespace File_Data
         string sponsor;
         List<string> source = new List<string>();
         string question;
+        Image img;
 
         public string Fio
         {
@@ -188,6 +192,19 @@ namespace File_Data
             set
             {
                 question = value;
+            }
+        }
+
+        public Image Img
+        {
+            get
+            {
+                return img;
+            }
+
+            set
+            {
+                img = value;
             }
         }
     }
