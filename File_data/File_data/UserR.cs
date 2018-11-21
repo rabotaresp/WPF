@@ -14,17 +14,10 @@ namespace File_Data
         string fio;
         string email;
         string phone;
-        string company;
-        string position;
         string experience;
-        string age;
-        string education;
-        string university;
-        string workdisire;
-        string sponsor;
         List<string> source = new List<string>();
         string question;
-        Image img;
+        Image img = new Image();
 
         public string Fio
         {
@@ -64,33 +57,6 @@ namespace File_Data
                 phone = value;
             }
         }
-
-        public string Company
-        {
-            get
-            {
-                return company;
-            }
-
-            set
-            {
-                company = value;
-            }
-        }
-
-        public string Position
-        {
-            get
-            {
-                return position;
-            }
-
-            set
-            {
-                position = value;
-            }
-        }
-
         public string Experience
         {
             get
@@ -102,73 +68,7 @@ namespace File_Data
             {
                 experience = value;
             }
-        }
-
-        public string Age
-        {
-            get
-            {
-                return age;
-            }
-
-            set
-            {
-                age = value;
-            }
-        }
-
-        public string Education
-        {
-            get
-            {
-                return education;
-            }
-
-            set
-            {
-                education = value;
-            }
-        }
-
-        public string University
-        {
-            get
-            {
-                return university;
-            }
-
-            set
-            {
-                university = value;
-            }
-        }
-
-        public string Workdisire
-        {
-            get
-            {
-                return workdisire;
-            }
-
-            set
-            {
-                workdisire = value;
-            }
-        }
-
-        public string Sponsor
-        {
-            get
-            {
-                return sponsor;
-            }
-
-            set
-            {
-                sponsor = value;
-            }
-        }
-
+        }        
         public List<string> Source
         {
             get
