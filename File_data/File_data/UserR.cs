@@ -17,7 +17,7 @@ namespace File_Data
         string experience;
         List<string> source = new List<string>();
         string question;
-        Image img = new Image();
+        byte [] img;
 
         public string Fio
         {
@@ -95,7 +95,7 @@ namespace File_Data
             }
         }
 
-        public Image Img
+        public byte[] Img
         {
             get
             {

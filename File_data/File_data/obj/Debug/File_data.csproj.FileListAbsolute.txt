@@ -8,3 +8,7 @@ D:\ProjectC\Project\WindowsForms\Cust_Paint\WindowsFormsApplication1\rabotaresp\
 D:\ProjectC\Project\WindowsForms\Cust_Paint\WindowsFormsApplication1\rabotaresp\WPF\File_data\File_data\obj\Debug\File_data.dll
 D:\ProjectC\Project\WindowsForms\Cust_Paint\WindowsFormsApplication1\rabotaresp\WPF\File_data\File_data\obj\Debug\File_data.pdb
 D:\ProjectC\Project\WindowsForms\Cust_Paint\WindowsFormsApplication1\rabotaresp\WPF\File_data\File_data\obj\Debug\File_data.csprojAssemblyReference.cache
+D:\P41017\WPF\2018-11-22_C_W\File_data\File_data\bin\Debug\File_data.dll
+D:\P41017\WPF\2018-11-22_C_W\File_data\File_data\bin\Debug\File_data.pdb
+D:\P41017\WPF\2018-11-22_C_W\File_data\File_data\obj\Debug\File_data.dll
+D:\P41017\WPF\2018-11-22_C_W\File_data\File_data\obj\Debug\File_data.pdb

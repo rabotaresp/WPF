@@ -29,8 +29,10 @@
                     <RadioButton x:Name="Exp_but1" Content="Нет, совсем нет в этом опыта" FontSize="14" GroupName="experience" Checked="Exp_but1_Checked"/>
                     <RadioButton x:Name="Exp_but2" Content="Есть опыт продаж, но не в ИТ" FontSize="14" GroupName="experience" Checked="Exp_but2_Checked"/>
                     <RadioButton x:Name="Exp_but3" Content="Есть опыт продаж в ИТ" FontSize="14" GroupName="experience" Checked="Exp_but3_Checked"/>
-                    <RadioButton x:Name="Other_button" Content="Другое:" FontSize="14" GroupName="experience" Checked="Other_button_Checked"/>
-                    <TextBox x:Name="Other_text" Margin="10,0,0,0" Width="450"  HorizontalAlignment="Left" FontSize="14"  ToolTip="Укажите Ваш вариант"/>
+                    <StackPanel Orientation="Horizontal">
+                        <RadioButton x:Name="Other_button" Content="Другое:" FontSize="14" GroupName="experience" Checked="Other_button_Checked"/>
+                        <TextBox x:Name="Other_text" Margin="10,0,0,0" Width="450"  HorizontalAlignment="Left" FontSize="14"  ToolTip="Укажите Ваш вариант"/>
+                    </StackPanel>                    
                 </StackPanel>
                 <TextBlock FontSize="14" Margin="10,0,0,0"><LineBreak/> Откуда вы узнали о SaleSolution? <LineBreak/></TextBlock>
                 <StackPanel x:Name="source">
@@ -42,8 +44,10 @@
                     <CheckBox x:Name="Source_check6" Content="Поиском в Интернете" FontSize="14" Checked="Source_check6_Checked" />
                     <CheckBox x:Name="Source_check7" Content="Из отзывов на форумах/ в группах в Интернете" FontSize="14" Checked="Source_check7_Checked" />
                     <CheckBox x:Name="Source_check8" Content="Из информации на IT Sales Marketing Meetup" FontSize="14" Checked="Source_check8_Checked" />
-                    <CheckBox x:Name="Check_button" Content="Другое:" FontSize="14" Checked="Check_button_Checked" Click="Check_button_Click" />
-                    <TextBox x:Name="Check_text" Margin="10,0,0,0" Width="450"  HorizontalAlignment="Left" FontSize="14" ToolTip="Добавьте Ваш вариант"/>
+                    <StackPanel Orientation="Horizontal">
+                        <CheckBox x:Name="Check_button" Content="Другое:" FontSize="14" Checked="Check_button_Checked" Unchecked="Check_button_Unchecked" />
+                        <TextBox x:Name="Check_text" Margin="10,0,0,0" Width="450"  HorizontalAlignment="Left" FontSize="14" ToolTip="Добавьте Ваш вариант"/>
+                    </StackPanel>                    
                 </StackPanel>
                 <TextBlock FontSize="14" Margin="10,0,0,0"></TextBlock>
                 <Button x:Name="Foto" Content="Добавить фото" HorizontalAlignment="Left" Margin="10,0,0,0" Width="120" Height="35" Click="Button_Click" Background="Aqua" ToolTip="Нажмите для выбора фото на компьютере"/>
@@ -53,8 +57,9 @@
                 <TextBox x:Name="Question_text" Margin="10,0,0,0" Width="450"  HorizontalAlignment="Left" FontSize="14" ToolTip="Здесь можно высказать свои замечания и пожелания"/>
                 <TextBlock FontSize="14" Margin="10,0,0,0"></TextBlock>
                 <Button x:Name="Submit" Content="Submit" Height="35" Width="120" Margin="10,0,0,0" HorizontalAlignment="Left" Background="Aqua" Click="Submit_Click" ToolTip="Нажмите чтобы закончить и закрыть форму опроса"/>
-                <TextBlock FontSize="14" Margin="10,0,0,0"><LineBreak/></TextBlock>
-                <TextBlock FontSize="14" Margin="0,0,0,0" Background="Bisque"><LineBreak/> Спасибо за ваши ответы! Мы уже готовимся к встрече с вами.<LineBreak/></TextBlock>
+                <Expander>
+                    <TextBlock FontSize="14" Margin="0,0,0,0" Background="Bisque"><LineBreak/> Спасибо за ваши ответы! Мы уже готовимся к встрече с вами.<LineBreak/></TextBlock>
+                </Expander>                
             </StackPanel>
         </ScrollViewer>
     </Grid>
