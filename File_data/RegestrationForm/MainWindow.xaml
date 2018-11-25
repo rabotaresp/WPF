@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RegestrationForm"
         mc:Ignorable="d"
-        Title="Regestration Form" Height="579.818" Width="715.624">
+        Title="Regestration Form" Height="692.818" Width="715.624">
     <Grid>
-        <ScrollViewer>
+        <ScrollViewer >
             <StackPanel>
                 <TextBlock Text="Регистрация на занятия Salesolution" FontSize="20" Margin="10,0,0,0"></TextBlock>
                 <TextBlock FontSize="16" Margin="10,0,0,0">
@@ -19,11 +19,11 @@
                 </TextBlock>
                 <TextBlock FontSize="14" Foreground="Red" Margin="10,0,0,0"> Обязательно*<LineBreak/></TextBlock>
                 <TextBlock FontSize="14" Margin="10,0,0,0">Фамилия и имя <Run Foreground="Red">*</Run></TextBlock>
-                <TextBox x:Name="FIO" Margin="10,0,0,0" Width="450"  HorizontalAlignment="Left" FontSize="14" ToolTip="Укажите Вашу Фамилию Имя и Отчество (если такое имеется)"/>
+                <TextBox x:Name="FIO" SpellCheck.IsEnabled="True" Language="ru-ru" Margin="10,0,0,0" Width="450"  HorizontalAlignment="Left" FontSize="14" ToolTip="Укажите Вашу Фамилию Имя и Отчество (если такое имеется)"/>
                 <TextBlock FontSize="14" Margin="10,0,0,0"><LineBreak/>E-Mail <Run Foreground="Red">*</Run></TextBlock>
-                <TextBox x:Name="EMail" Margin="10,0,0,0" Width="450"  HorizontalAlignment="Left" FontSize="14" ToolTip="Укажите Ваш E-Mail"/>
+                <TextBox x:Name="EMail" SpellCheck.IsEnabled="True" Language="ru-ru" Margin="10,0,0,0" Width="450"  HorizontalAlignment="Left" FontSize="14" ToolTip="Укажите Ваш E-Mail"/>
                 <TextBlock FontSize="14" Margin="10,0,0,0"><LineBreak/>Телефон <Run Foreground="Red">*</Run></TextBlock>
-                <TextBox x:Name="Phone" Margin="10,0,0,0" Width="450"  HorizontalAlignment="Left" FontSize="14" ToolTip="Укажите Ваш Телефон"/>
+                <TextBox x:Name="Phone" SpellCheck.IsEnabled="True" Language="ru-ru" Margin="10,0,0,0" Width="450"  HorizontalAlignment="Left" FontSize="14" ToolTip="Укажите Ваш Телефон"/>
                 <TextBlock FontSize="14" Margin="10,0,0,0"><LineBreak/> У вас уже есть опыт продаж?<Run Foreground="Red">*</Run> <LineBreak/></TextBlock>
                 <StackPanel x:Name="Experience">
                     <RadioButton x:Name="Exp_but1" Content="Нет, совсем нет в этом опыта" FontSize="14" GroupName="experience" Checked="Exp_but1_Checked"/>
@@ -31,8 +31,13 @@
                     <RadioButton x:Name="Exp_but3" Content="Есть опыт продаж в ИТ" FontSize="14" GroupName="experience" Checked="Exp_but3_Checked"/>
                     <StackPanel Orientation="Horizontal">
                         <RadioButton x:Name="Other_button" Content="Другое:" FontSize="14" GroupName="experience" Checked="Other_button_Checked"/>
-                        <TextBox x:Name="Other_text" Margin="10,0,0,0" Width="450"  HorizontalAlignment="Left" FontSize="14"  ToolTip="Укажите Ваш вариант"/>
-                    </StackPanel>                    
+                        <TextBox x:Name="Other_text" SpellCheck.IsEnabled="True" Language="ru-ru" Margin="10,0,0,0" Width="450"  HorizontalAlignment="Left" FontSize="14"  ToolTip="Укажите Ваш вариант"/>
+                    </StackPanel>
+                    <Popup x:Name="popup_answ" StaysOpen="False" Placement="Mouse" MaxWidth="180" AllowsTransparency="True">
+                        <TextBlock TextWrapping="Wrap" Width="180" Background="Azure" Opacity="0.8" >
+                        Можно выбрать только одно значение!
+                        </TextBlock>
+                    </Popup>
                 </StackPanel>
                 <TextBlock FontSize="14" Margin="10,0,0,0"><LineBreak/> Откуда вы узнали о SaleSolution? <LineBreak/></TextBlock>
                 <StackPanel x:Name="source">
@@ -46,7 +51,7 @@
                     <CheckBox x:Name="Source_check8" Content="Из информации на IT Sales Marketing Meetup" FontSize="14" Checked="Source_check8_Checked" />
                     <StackPanel Orientation="Horizontal">
                         <CheckBox x:Name="Check_button" Content="Другое:" FontSize="14" Checked="Check_button_Checked" Unchecked="Check_button_Unchecked" />
-                        <TextBox x:Name="Check_text" Margin="10,0,0,0" Width="450"  HorizontalAlignment="Left" FontSize="14" ToolTip="Добавьте Ваш вариант"/>
+                        <TextBox x:Name="Check_text" SpellCheck.IsEnabled="True" Language="ru-ru" Margin="10,0,0,0" Width="450"  HorizontalAlignment="Left" FontSize="14" ToolTip="Добавьте Ваш вариант"/>
                     </StackPanel>                    
                 </StackPanel>
                 <TextBlock FontSize="14" Margin="10,0,0,0"></TextBlock>
@@ -56,11 +61,16 @@
                 <TextBlock FontSize="14" Margin="10,0,0,0"><LineBreak/> Это место для ваших вопросов и пожеланий:</TextBlock>
                 <TextBox x:Name="Question_text" Margin="10,0,0,0" Width="450"  HorizontalAlignment="Left" FontSize="14" ToolTip="Здесь можно высказать свои замечания и пожелания"/>
                 <TextBlock FontSize="14" Margin="10,0,0,0"></TextBlock>
-                <Button x:Name="Submit" Content="Submit" Height="35" Width="120" Margin="10,0,0,0" HorizontalAlignment="Left" Background="Aqua" Click="Submit_Click" ToolTip="Нажмите чтобы закончить и закрыть форму опроса"/>
                 <Expander>
-                    <TextBlock FontSize="14" Margin="0,0,0,0" Background="Bisque"><LineBreak/> Спасибо за ваши ответы! Мы уже готовимся к встрече с вами.<LineBreak/></TextBlock>
-                </Expander>                
-            </StackPanel>
+                    <TextBlock FontSize="14" Margin="0,0,0,0" Background="Bisque">
+                        <LineBreak/>Спасибо за ваши ответы! Мы уже готовимся к встрече с вами.<LineBreak/>
+                        <LineBreak/> Мы предлагаем 2 программы обучения IT-продавцов.<LineBreak/>
+                        <LineBreak/> Первая программа для тех, кто хочет "войти" в IT-продажи.<LineBreak/>
+                        Этот курс мы подготовили для частных клиентов.<LineBreak/>
+                        <LineBreak/>Вторая программа - это корпоративный стандарт.<LineBreak/>
+                    </TextBlock>
+                </Expander>
+                <Button x:Name="Submit" Content="Submit" Height="35" Width="120" Margin="10,0,0,0" HorizontalAlignment="Left" Background="Aqua" Click="Submit_Click" ToolTip="Нажмите чтобы закончить и закрыть форму опроса"/> </StackPanel>
         </ScrollViewer>
     </Grid>
 </Window>

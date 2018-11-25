@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -23,14 +24,29 @@ namespace Open_Form
     /// </summary>
     public partial class MainWindow : Window
     {
+        public ObservableCollection<File_Data.UserR> User_list;// { get; set; }
         BinaryFormatter form_bin = new BinaryFormatter();
         OpenFileDialog openFileDialog1 = new OpenFileDialog();
-        MemoryStream ms;
+        MemoryStream ms;        
         List<File_Data.UserR> LUser;
         public MainWindow()
         {
             InitializeComponent();
             LUser = new List<File_Data.UserR>();
+            User_list = new ObservableCollection<File_Data.UserR>();
+            All_User_list.ItemsSource = User_list;
+            //if (System.IO.File.Exists("LUser_bin.dat"))
+            //{
+            //    using (FileStream fs = new FileStream("LUser_bin.dat", FileMode.OpenOrCreate))
+            //    {
+            //        LUser = (List<File_Data.UserR>)form_bin.Deserialize(fs);
+            //        foreach (File_Data.UserR p in LUser)
+            //        {                        
+            //            foreach (string n in p.Source)
+            //                l_source = n;
+            //        }
+            //    }
+            //}
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
@@ -41,12 +57,19 @@ namespace Open_Form
                 using (FileStream fs = new FileStream(openFileDialog1.FileName, FileMode.OpenOrCreate))
                 {
                     LUser = (List<File_Data.UserR>)form_bin.Deserialize(fs);
+                    
                     foreach(File_Data.UserR p in LUser)
-                    {
-                        //My_foto.Source = binaryToImg(p.Img);
+                    {   
+                        User_list.Add(new File_Data.UserR() { Img = p.Img, Fio = p.Fio, Email = p.Email, Phone = p.Phone, Experience = p.Experience, Question = p.Question, Source = p.Source});
+                       
                     }                     
                 }
             }
+        }
+        private void All_User_list_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            File_Data.UserR p = (File_Data.UserR)All_User_list.SelectedItem;
+            //MessageBox.Show("Ф.И.О.:" + " " + p.Fio + " " + "E-Mail:" + " " + p.Email + " " + "Телефон:" + p.Phone + " " + "Опыт:" +" " + p.Experience + " " + p.Question);
         }
         public BitmapImage binaryToImg(byte[] arr)
         {
