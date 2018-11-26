@@ -1,0 +1,45 @@
+﻿<Window x:Class="Open_Form.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Open_Form"
+        xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="612.5" Width="537.895">
+    <Window.Resources>
+        <DataTemplate x:Key="listTemplate">
+            <StackPanel Margin="5">
+                <Border x:Name="ItemImageBorder">
+                    <Image Width="100" Height="75" Source="{Binding Path=Img}" HorizontalAlignment="Left" />
+                </Border>
+                <TextBlock FontSize="16" Text="{Binding Path=Fio}" HorizontalAlignment="Left" />
+                <TextBlock FontSize="16" Text="{Binding Path=Email}" HorizontalAlignment="Left" />
+                <TextBlock FontSize="16" Text="{Binding Path=Phone}" HorizontalAlignment="Left" />
+                <TextBlock FontSize="16" Text="{Binding Path=Experience}" HorizontalAlignment="Left" />
+                <ListView x:Name="Add_List_Sourcer" FontSize="16" ItemsSource="{ Binding Path=Source}" HorizontalAlignment="Left"/>
+                <TextBlock FontSize="16" Text="{Binding Path=Question}" HorizontalAlignment="Left" />
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
+    <Grid>
+        <StackPanel>
+            <Menu Height="25" VerticalAlignment="Top">
+                <MenuItem Header="File">
+                    <MenuItem Header="Open Project" Click="MenuItem_Click" ></MenuItem>
+                    <MenuItem Header="Close Project" ></MenuItem>
+                    <Separator/>
+                    <MenuItem Header="Exit" Click="MenuItem_Click_1" ></MenuItem>
+                </MenuItem>
+                <ToolBar Height="25" VerticalAlignment="Top">
+                    <TextBox x:Name="toolbar_search_text" Foreground="LightGray" Width="100">Поиск...</TextBox>
+                    <ComboBox  VerticalAlignment="Top" Height="25"  Width="100" Foreground="LightGray" Text="Поиск..." ></ComboBox>
+                </ToolBar>
+            </Menu>
+        </StackPanel>
+        <StackPanel>
+            <ListBox x:Name="All_User_list" ItemTemplate="{DynamicResource listTemplate}" SelectionChanged="All_User_list_SelectionChanged"/>
+            <!--<TextBlock x:Name="List_Source"></TextBlock>-->
+        </StackPanel>
+    </Grid>
+</Window>
