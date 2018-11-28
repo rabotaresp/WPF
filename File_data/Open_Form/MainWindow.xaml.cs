@@ -27,26 +27,16 @@ namespace Open_Form
         public ObservableCollection<File_Data.UserR> User_list;// { get; set; }
         BinaryFormatter form_bin = new BinaryFormatter();
         OpenFileDialog openFileDialog1 = new OpenFileDialog();
-        MemoryStream ms;        
+        //MemoryStream ms;      
+        string Find;
         List<File_Data.UserR> LUser;
+        List<File_Data.UserR> temp_LUser;
         public MainWindow()
         {
             InitializeComponent();
             LUser = new List<File_Data.UserR>();
             User_list = new ObservableCollection<File_Data.UserR>();
-            All_User_list.ItemsSource = User_list;
-            //if (System.IO.File.Exists("LUser_bin.dat"))
-            //{
-            //    using (FileStream fs = new FileStream("LUser_bin.dat", FileMode.OpenOrCreate))
-            //    {
-            //        LUser = (List<File_Data.UserR>)form_bin.Deserialize(fs);
-            //        foreach (File_Data.UserR p in LUser)
-            //        {                        
-            //            foreach (string n in p.Source)
-            //                l_source = n;
-            //        }
-            //    }
-            //}
+            All_User_list.ItemsSource = User_list;            
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
@@ -60,8 +50,7 @@ namespace Open_Form
                     
                     foreach(File_Data.UserR p in LUser)
                     {   
-                        User_list.Add(new File_Data.UserR() { Img = p.Img, Fio = p.Fio, Email = p.Email, Phone = p.Phone, Experience = p.Experience, Question = p.Question, Source = p.Source});
-                       
+                        User_list.Add(new File_Data.UserR() { Img = p.Img, Fio = p.Fio, Email = p.Email, Phone = p.Phone, Experience = p.Experience, Question = p.Question, Source = p.Source});                         
                     }                     
                 }
             }
@@ -71,20 +60,56 @@ namespace Open_Form
             File_Data.UserR p = (File_Data.UserR)All_User_list.SelectedItem;
             //MessageBox.Show("Ф.И.О.:" + " " + p.Fio + " " + "E-Mail:" + " " + p.Email + " " + "Телефон:" + p.Phone + " " + "Опыт:" +" " + p.Experience + " " + p.Question);
         }
-        public BitmapImage binaryToImg(byte[] arr)
-        {
-            ms = new MemoryStream(arr);
-            BitmapImage img = new BitmapImage();
-            img.BeginInit();
-            img.CacheOption = BitmapCacheOption.OnLoad;
-            img.StreamSource = ms;
-            img.EndInit();
-            return img;
-        }
+        //Преобразование байт в картинку
+        //public BitmapImage binaryToImg(byte[] arr)
+        //{
+        //    ms = new MemoryStream(arr);
+        //    BitmapImage img = new BitmapImage();
+        //    img.BeginInit();
+        //    img.CacheOption = BitmapCacheOption.OnLoad;
+        //    img.StreamSource = ms;
+        //    img.EndInit();
+        //    return img;
+        //}
 
         private void MenuItem_Click_1(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        private void toolbar_search_text_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if(LUser != null)
+            {
+                if(toolbar_search_text.Text == string.Empty)
+                {
+                    All_User_list.ItemsSource = null;
+                    All_User_list.ItemsSource = LUser;
+                }
+                else
+                {
+                    temp_LUser = new List<File_Data.UserR>();
+                    for(int i = 0; i< LUser.Count; i++)
+                    {
+                        string tmp_str;
+                        if (LUser[i].Fio.Length >= toolbar_search_text.Text.Length)
+                        {
+                            tmp_str = LUser[i].Fio.Substring(0, toolbar_search_text.Text.Length);
+                            if(tmp_str.ToLower()==toolbar_search_text.Text.ToLower())
+                            {
+                                temp_LUser.Add(LUser[i]);
+                            }
+                        }                            
+                    }
+                    All_User_list.ItemsSource = null;
+                    All_User_list.ItemsSource = temp_LUser;
+                }
+            }
+
+        }
+        private void toolbar_search_text_GotFocus(object sender, RoutedEventArgs e)
+        {
+            toolbar_search_text.Text = string.Empty;
         }
     }
 }

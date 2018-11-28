@@ -88,28 +88,26 @@ namespace RegestrationForm
             Other_text.IsEnabled = false;
             Other_text.Text = null;
             User.Experience = Convert.ToString(Exp_but1.Content);
-            popup_answ.IsOpen = true;
+
         }
         private void Exp_but2_Checked(object sender, RoutedEventArgs e)
         {
             Other_text.IsEnabled = false;
             Other_text.Text = null;
             User.Experience = Convert.ToString(Exp_but2.Content);
-            popup_answ.IsOpen = true;
         }
         private void Exp_but3_Checked(object sender, RoutedEventArgs e)
         {
             Other_text.IsEnabled = false;
             Other_text.Text = null;
             User.Experience = Convert.ToString(Exp_but3.Content);
-            popup_answ.IsOpen = true;
         }
         private void Other_button_Checked(object sender, RoutedEventArgs e)
         {
             Other_text.IsEnabled = true;
             Other_text.Focus();
             User.Experience = Other_text.Text;
-            popup_answ.IsOpen = true;
+            ((RadioButton)sender).Foreground = new SolidColorBrush(Colors.Red);
         }
 
         private void Source_check1_Checked(object sender, RoutedEventArgs e)
@@ -172,6 +170,11 @@ namespace RegestrationForm
         private void Check_button_Unchecked(object sender, RoutedEventArgs e)
         {
             Check_text.IsEnabled = false;
+        }
+        private void Other_button_Unchecked(object sender, RoutedEventArgs e)
+        {
+            Other_text.IsEnabled = false;
+            ((RadioButton)sender).Foreground = new SolidColorBrush(Colors.Black);
         }
     }
 }

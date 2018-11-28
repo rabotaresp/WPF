@@ -6,9 +6,10 @@
         xmlns:local="clr-namespace:Open_Form"
         xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
         mc:Ignorable="d"
-        Title="MainWindow" Height="612.5" Width="537.895">
-    <Window.Resources>
-        <DataTemplate x:Key="listTemplate">
+        Title="MainWindow" Height="680" Width="auto">
+    <Window.Resources>        
+        <!--Add listview data-->
+        <!--<DataTemplate x:Key="listTemplate">
             <StackPanel Margin="5">
                 <Border x:Name="ItemImageBorder">
                     <Image Width="100" Height="75" Source="{Binding Path=Img}" HorizontalAlignment="Left" />
@@ -17,29 +18,45 @@
                 <TextBlock FontSize="16" Text="{Binding Path=Email}" HorizontalAlignment="Left" />
                 <TextBlock FontSize="16" Text="{Binding Path=Phone}" HorizontalAlignment="Left" />
                 <TextBlock FontSize="16" Text="{Binding Path=Experience}" HorizontalAlignment="Left" />
-                <!--<TextBlock FontSize="16" Text="{Binding Path=Source}" HorizontalAlignment="Left" />-->
+                <ListView x:Name="Add_List_Sourcer" FontSize="16" ItemsSource="{ Binding Path=Source}" HorizontalAlignment="Left"/>
                 <TextBlock FontSize="16" Text="{Binding Path=Question}" HorizontalAlignment="Left" />
             </StackPanel>
-        </DataTemplate>
+        </DataTemplate>-->
     </Window.Resources>
     <Grid>
-        <StackPanel>
-            <Menu Height="25" VerticalAlignment="Top">
-                <MenuItem Header="File">
-                    <MenuItem Header="Open Project" Click="MenuItem_Click" ></MenuItem>
-                    <MenuItem Header="Close Project" ></MenuItem>
-                    <Separator/>
-                    <MenuItem Header="Exit" Click="MenuItem_Click_1" ></MenuItem>
-                </MenuItem>
-                <ToolBar Height="25" VerticalAlignment="Top">
-                    <TextBox x:Name="toolbar_search_text" Foreground="LightGray" Width="100">Поиск...</TextBox>
-                    <ComboBox  VerticalAlignment="Top" Height="25"  Width="100" Foreground="LightGray" Text="Поиск..." ></ComboBox>
-                </ToolBar>
-            </Menu>
-        </StackPanel>
-        <StackPanel>
-            <ListBox x:Name="All_User_list" ItemTemplate="{DynamicResource listTemplate}" SelectionChanged="All_User_list_SelectionChanged"/>
-            <TextBlock x:Name="List_Source"></TextBlock>
-        </StackPanel>
+        <Menu Height="25" VerticalAlignment="Top">
+            <MenuItem Header="File">
+                <MenuItem Header="Open Project" Click="MenuItem_Click" ></MenuItem>
+                <Separator/>
+                <MenuItem Header="Exit" Click="MenuItem_Click_1" ></MenuItem>
+            </MenuItem>
+            <ToolBar Height="25" VerticalAlignment="Top">
+                <TextBox x:Name="toolbar_search_text" Foreground="LightGray" Width="100" TextChanged="toolbar_search_text_TextChanged" GotFocus="toolbar_search_text_GotFocus">Поиск...</TextBox>                
+            </ToolBar>
+        </Menu>
+        <DataGrid Margin="0 30 0 0" x:Name="All_User_list" AutoGenerateColumns="False" RowHeight="200">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="Фото" Width="Auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Border x:Name="ItemImageBorder" Width="200" Height="200">
+                            <Image Source="{Binding Img}"/>
+                            </Border>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn x:Name="Fild_FIO" Header="Ф.И.О." FontSize="16" Binding="{Binding Fio}" Width="Auto"/>
+                <DataGridTextColumn x:Name="Fild_EMail" Header="E-Mail" FontSize="16" Binding="{Binding Email}" Width="Auto"/>
+                <DataGridTextColumn x:Name="Fild_Phone" Header="Телефон" FontSize="16" Binding="{Binding Phone}" Width="Auto"/>
+                <DataGridTextColumn x:Name="Fild_Experience" Header="Опыт" FontSize="16" Binding="{Binding Experience}" Width="Auto"/>
+                <DataGridTemplateColumn Header="Источники" Width="Auto">
+                    <DataGridTemplateColumn.CellTemplate >
+                        <DataTemplate>
+                            <ListView x:Name="Fild_Source" FontSize="16" ItemsSource="{ Binding Path=Source}" Width="Auto"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>

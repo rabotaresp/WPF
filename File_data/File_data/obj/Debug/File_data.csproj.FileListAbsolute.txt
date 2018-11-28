@@ -18,3 +18,14 @@ D:\ProjectC\Project\WPF\Registration_forn\rabotaresp\WPF\File_data\File_data\obj
 D:\ProjectC\Project\WPF\Registration_forn\rabotaresp\WPF\File_data\File_data\obj\Debug\File_data.csproj.CoreCompileInputs.cache
 D:\ProjectC\Project\WPF\Registration_forn\rabotaresp\WPF\File_data\File_data\obj\Debug\File_data.dll
 D:\ProjectC\Project\WPF\Registration_forn\rabotaresp\WPF\File_data\File_data\obj\Debug\File_data.pdb
+D:\P41017\WPF\File_data\File_data\bin\Debug\File_data.dll
+D:\P41017\WPF\File_data\File_data\bin\Debug\File_data.pdb
+D:\P41017\WPF\File_data\File_data\obj\Debug\File_data.csproj.CoreCompileInputs.cache
+D:\P41017\WPF\File_data\File_data\obj\Debug\File_data.dll
+D:\P41017\WPF\File_data\File_data\obj\Debug\File_data.pdb
+D:\ProjectC\Project\WPF\Registration_forn\rabotaresp\WPF\2018-11-28_H_W\File_data\File_data\bin\Debug\File_data.dll
+D:\ProjectC\Project\WPF\Registration_forn\rabotaresp\WPF\2018-11-28_H_W\File_data\File_data\bin\Debug\File_data.pdb
+D:\ProjectC\Project\WPF\Registration_forn\rabotaresp\WPF\2018-11-28_H_W\File_data\File_data\obj\Debug\File_data.csprojAssemblyReference.cache
+D:\ProjectC\Project\WPF\Registration_forn\rabotaresp\WPF\2018-11-28_H_W\File_data\File_data\obj\Debug\File_data.csproj.CoreCompileInputs.cache
+D:\ProjectC\Project\WPF\Registration_forn\rabotaresp\WPF\2018-11-28_H_W\File_data\File_data\obj\Debug\File_data.dll
+D:\ProjectC\Project\WPF\Registration_forn\rabotaresp\WPF\2018-11-28_H_W\File_data\File_data\obj\Debug\File_data.pdb
